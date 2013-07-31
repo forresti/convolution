@@ -20,9 +20,11 @@ make
 
 <h3>Code structure</h3>
 
-<h5>The crux our convolution implementation (convolution.cu)</h5>
+<h5>The crux our convolution implementation `convolution.cu)</h5>
 ``` C++
-__global__ convolutionKernel_filter3x3_size4x4(...)
+//memoryLayout = {global, global_register, texCache, or texCache_register}
+//filter dims and size to load = {2x2, 3x3, ...}
+__global__ convolutionKernel_memoryLayout_filter3x3_size4x4(...) //one of many implementations that we generate
     load 4x4 window to registers
     
     compute 4 convolution windows, 3x3 each.
@@ -31,8 +33,8 @@ __global__ convolutionKernel_filter3x3_size4x4(...)
 ```
 
 <h5>Autotuning</h5>
-doCodegen.sh produces code for many convolution filter sizes and many levels of unrolling. 
-Feel free to modify doCodegen.sh and codeGen_*.sh to explore alternative filter sizes, unrolling levels, and memory layouts. 
+`doCodegen.sh` produces code for many convolution filter sizes and many levels of unrolling. 
+Feel free to modify `doCodegen.sh `and `codeGen_*.sh` to explore alternative filter sizes, unrolling levels, and memory layouts. 
 Dive into this at your own risk though -- some 1337ness with bash may be required.
 
 <h3>FAQ</h3>
