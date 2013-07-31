@@ -1,15 +1,13 @@
-#Author: Forrest Iandola iandola1@illinois.edu
-#Created: 1/24/10
-#Modified: 9/6/12
+#Author: Forrest Iandola forresti@eecs.berkeley.edu
 
 OBJS = main.o convolution.o convRunner.o helpers.o
 
 EXENAME = main
 
 CC = nvcc 
-CCOPTS = `pkg-config opencv --cflags`  -c  -g -pg -O0 -gencode=arch=compute_20,code=sm_20 -gencode=arch=compute_30,code=sm_30 -gencode=arch=compute_35,code=sm_35 -Xptxas -v #-gencode=arch=compute_35,code=sm_35 -Xptxas -v  
+CCOPTS = `pkg-config opencv --cflags` -c -O0 -gencode=arch=compute_20,code=sm_20 -gencode=arch=compute_30,code=sm_30 -gencode=arch=compute_35,code=sm_35 -Xptxas -v  
 LINK = nvcc
-LINKOPTS = `pkg-config opencv --libs` -g -pg -o
+LINKOPTS = `pkg-config opencv --libs` -o 
 
 all : $(EXENAME)
 

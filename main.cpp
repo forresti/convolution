@@ -25,8 +25,8 @@ int main (int argc,char **argv)
 
     //testConvolution_withDummyImg(640, 480);
     //testConvolution_withDummyImg(512, 512);
-    testConvolution_withDummyImg(9000, 9000);
-    //testConvolution();
+    testConvolution_withDummyImg(9216, 9216); //9216x9216 image, like FairchildImaging CCD595
+    testConvolution(); //use Lena.png. Save convolved images to ./results/<implementation name>.png
 
     return 0;
 }
