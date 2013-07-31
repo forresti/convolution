@@ -39,8 +39,8 @@ void outputProcessedImage(unsigned int* processedImg, int width, int height, str
 
 void outputProcessedImageFloat(float* processedImg, int width, int height, string out_filename)
 {
-    //cv::Mat img = cv::Mat::zeros(height, width, CV_8UC1);
-    cv::Mat img = cv::Mat::zeros(height, width, CV_32FC1);
+    cv::Mat img = cv::Mat::zeros(height, width, CV_8UC1);
+    //cv::Mat img = cv::Mat::zeros(height, width, CV_32FC1);
     for(int i=0; i<height; i++)
     {
         for(int j=0; j<width; j++)
