@@ -11,7 +11,7 @@ To appear in IEEE International Conference on Image Processing (ICIP), 2013.
 - Ubuntu 12.04
 - NVIDIA Fermi or Kepler GPU (compute capability 2.0 or higher)
 - CUDA 5.0
-- OpenCV installed for file I/O
+- Install **OpenCV** for file I/O
 
 
 <h3>Getting started</h3>
