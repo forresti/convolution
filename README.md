@@ -1,8 +1,10 @@
 <h5>This fast convolution implementation accompanies the following paper</h5>
 
+```
 Forrest N. Iandola, David Sheffield, Michael Anderson, Phitchaya Mangpo Phothilimthana, and Kurt Keutzer. 
-"Communication-Minimizing 2D Convolution in GPU Registers." 
+"Communication-Minimizing 2D Convolution in GPU Registers."
 To appear in IEEE International Conference on Image Processing (ICIP), 2013. 
+```
 
 
 <h3>Recommended System Configuration</h3>
