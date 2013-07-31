@@ -35,7 +35,7 @@ int main (int argc,char **argv)
 //hard-code device preferences here.
 void deviceStuff()
 {
-    cudaSetDevice(2);
+    //cudaSetDevice(2);
 
     int device;
     cudaGetDevice(&device);
