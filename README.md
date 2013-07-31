@@ -5,7 +5,7 @@ Forrest N. Iandola, David Sheffield, Michael Anderson, Phitchaya Mangpo Phothili
 "Communication-Minimizing 2D Convolution in GPU Registers."
 To appear in IEEE International Conference on Image Processing (ICIP), 2013. 
 ```
-
+[Paper (PDF)](http://www.forrestiandola.com/PREPRINT_convolution_2d_gpu_registers.pdf)
 
 <h3>Recommended System Configuration</h3>
 - Ubuntu 12.04
