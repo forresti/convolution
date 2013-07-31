@@ -35,7 +35,7 @@ This code is designed as a research prototype.
 Feel free to try to use it as a library, but our main goal is to illustrate the performance of our communication-minimizing convolution technique.
 
 <h5>How do I set the convolution filter?</h5>
-Our autotuner uses a hard-coded blur kernel. To plug in your own filter with no computation time penalty, use constant memory:
+Our autotuner uses a hard-coded blur kernel. To plug in your own filter with no computational performance penalty, use constant memory:
 
 ``` C++
 //adapted from NVIDIA_CUDA-5.0_Samples/3_Imaging/convolutionSeparable/convolutionSeparable.cu
