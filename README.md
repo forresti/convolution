@@ -76,4 +76,8 @@ __device__ void convolutionDevice_size4x4_kernel3x3(float in[4][4], float *out, 
     *out = tmp;
 }
 ```
+<h5>What data formats are supported?</h5>
+Our code supports 1-channel 32-bit floating-point images. 
+We find that this format is very common for feature extraction algorithms like HOG and SIFT. 
+You may be able to implement our techniques for other formats, such as 8-bit multi-channel images.
 
