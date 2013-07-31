@@ -28,3 +28,42 @@ __global__ convolutionKernel_filter3x3_size4x4(...)
     
     save results to global memory
 ```
+
+<h3>FAQ</h3>
+<h5>Can I use this code as a library in my own system?</h5>
+This code is designed as a research prototype. 
+Feel free to try to use it as a library, but our main goal is to illustrate the performance of our communication-minimizing convolution technique.
+
+<h5>How do I set the convolution filter?</h5>
+Our autotuner uses a hard-coded blur kernel. To plug in your own filter with no computation time penalty, use constant memory:
+
+``` C++
+//adapted from NVIDIA_CUDA-5.0_Samples/3_Imaging/convolutionSeparable/convolutionSeparable.cu
+#define KERNEL_LENGTH 9
+__constant__ float c_Kernel[KERNEL_LENGTH]; //constant memory on GPU (global variable in C++)
+
+extern "C" void initialize_constant_memory() //call this before launching a convolution on your GPU
+{
+    float h_Kernel[9] = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
+    CHECK_CUDART(cudaMemcpyToSymbol(c_Kernel, h_Kernel, KERNEL_LENGTH * sizeof(float)));
+}
+
+//code from our autotuner, with the addition of a user-specified kernel:
+__device__ void convolutionDevice_size4x4_kernel3x3(float in[4][4], float *out, int startX, int startY)
+{
+    float tmp=
+        in[startY+0][startX+0] * c_Kernel[0] + //c_Kernel[] replaces hard-coded 'filter' parameter in provided code.
+        in[startY+0][startX+1] * c_Kernel[1] +
+        in[startY+0][startX+2] * c_Kernel[2] +
+
+        in[startY+1][startX+0] * c_Kernel[3] +
+        in[startY+1][startX+1] * c_Kernel[4] +
+        in[startY+1][startX+2] * c_Kernel[5] +
+
+        in[startY+2][startX+0] * c_Kernel[6] +
+        in[startY+2][startX+1] * c_Kernel[7] +
+        in[startY+2][startX+2] * c_Kernel[8]
+    *out = tmp;
+}
+```
+
