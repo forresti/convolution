@@ -54,7 +54,7 @@ __constant__ float c_Kernel[KERNEL_LENGTH]; //constant memory on GPU (global var
 
 extern "C" void initialize_constant_memory() //call this before launching a convolution on your GPU
 {
-    float h_Kernel[9] = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
+    float h_Kernel[9] = {-1, 0, 1, -1, 0, 1, -1, 0, 1}; //example filter (you can set this dynamically)
     CHECK_CUDART(cudaMemcpyToSymbol(c_Kernel, h_Kernel, KERNEL_LENGTH * sizeof(float)));
 }
 
