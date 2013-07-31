@@ -22,7 +22,7 @@ make
 
 <h3>Code structure</h3>
 
-<h5>The crux our convolution implementation (convolution.cu)</h5>
+<h5>The crux of our convolution implementation (convolution.cu)</h5>
 ``` C++
 //memoryLayout = {global, global_register, texCache, or texCache_register}
 //filter dims and size to load = {2x2, 3x3, ...}
