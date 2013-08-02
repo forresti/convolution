@@ -7,6 +7,9 @@ To appear in IEEE International Conference on Image Processing (ICIP), 2013.
 ```
 [Paper (PDF)](http://www.forrestiandola.com/PREPRINT_convolution_2d_gpu_registers.pdf)
 
+We accelerate 2D convolution by reducing memory communication, prefetching data to registers, unrolling loops, and utilizing the texture cache.
+Our techniques draw on Vasily Volkov's [Better Performance at Lower Occupancy](www.cs.berkeley.edu/~volkov/volkov10-GTC.pdf) line of work.
+
 <h3>Recommended System Configuration</h3>
 - Ubuntu 12.04
 - NVIDIA Fermi or Kepler GPU (compute capability 2.0 or higher)
