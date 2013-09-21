@@ -13,7 +13,7 @@ Our techniques draw on Vasily Volkov's [Better Performance at Lower Occupancy](w
 <h3>Recommended System Configuration</h3>
 - Ubuntu 12.04
 - NVIDIA Fermi or Kepler GPU (compute capability 2.0 or higher)
-- CUDA 5.0
+- CUDA 5.0 or higher
 - Install **OpenCV** for file I/O
 
 
